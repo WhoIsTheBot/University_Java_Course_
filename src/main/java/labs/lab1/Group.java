@@ -1,23 +1,24 @@
 package labs.lab1;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
 /**
  * Клас представляє інформацію про групу.
  */
-public class Group {
-    private final String groupNumber;
-    private final int yearCreated;
-    private final String department;
-    private final String curatorFullName;
-    private final List<Student> students;
+public class Group implements Comparator<Group> {
+    private String groupNumber;
+    private int yearCreated;
+    private String department;
+    private Teachers curatorId;
+    private List<Student> students;
 
-    public Group(String groupNumber, int yearCreated, String department, String curatorFullName, List<Student> students) {
+    public Group(String groupNumber, int yearCreated, String department, Teachers curatorId, List<Student> students) {
         this.groupNumber = groupNumber;
         this.yearCreated = yearCreated;
         this.department = department;
-        this.curatorFullName = curatorFullName;
+        this.curatorId = curatorId;
         this.students = students;
     }
 
@@ -33,8 +34,8 @@ public class Group {
         return department;
     }
 
-    public String getCuratorFullName() {
-        return curatorFullName;
+    public Teachers getCuratorId() {
+        return curatorId;
     }
 
     public List<Student> getStudents() {
@@ -44,7 +45,7 @@ public class Group {
     @Override
     public String toString() {
         return String.format("Group{groupNumber='%s', yearCreated=%d, department='%s', curatorFullName='%s', students=%s}",
-                groupNumber, yearCreated, department, curatorFullName, students);
+                groupNumber, yearCreated, department, curatorId, students);
     }
 
 
@@ -61,5 +62,14 @@ public class Group {
     @Override
     public int hashCode() {
         return Objects.hash(groupNumber, yearCreated, department);
+    }
+
+    @Override
+    public int compare(Group g1, Group g2) {
+        int yearComparison = Integer.compare(g1.yearCreated, g2.yearCreated);
+        if (yearComparison != 0) {
+            return yearComparison;
+        }
+        return g1.groupNumber.compareTo(g2.groupNumber);
     }
 }

@@ -2,8 +2,6 @@ package labs.lab0;
 
 
 
-
-
 public class Variant5 {
     public int inputOutputTask(int a) {
         return (a*a*a);
@@ -39,8 +37,7 @@ public class Variant5 {
             double weight = Math.round(i * 10.0) / 10.0;
             System.out.println(weight + " kg: " + result);
         }
-
-        return Math.round(0.1 * price * 10.0) / 10.0;
+        return Math.round(price * 1.0 * 10.0) / 100.0;
     }
     public int whileTask(int N) {
         int K = 0;

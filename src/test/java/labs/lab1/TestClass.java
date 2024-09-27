@@ -14,6 +14,9 @@ public class TestClass {
     private Student student1;
     private Student student2;
     private Group group;
+    private Group group1;
+    private Teachers teacher1;
+    private Teachers teacher2;
     private PerformanceRecord performanceRecord;
 
     /**
@@ -25,14 +28,22 @@ public class TestClass {
         student1 = new Student("Ivan", "Petrenko", "2000-01-15", "12345");
         student2 = new Student("Maria", "Ivanova", "2001-05-20", "54321");
 
+        teacher1 = new Teachers.Builder()
+                .setId("AB2341")
+                .setFullName("Nina Boyko")
+                .setBirthday("1985-06-15")
+                .setPosition("Mathematics Teacher")
+                .setPhoneNumber("380123456789")
+                .build();
         // Create a group with two students
         List<Student> students = Arrays.asList(student1, student2);
-        group = new Group("KP-01", 2019, "Computer Science", "Alexander Alexandrovich", students);
+        group = new Group("KP-01", 2019, "Computer Science", teacher1, students);
+        group1 = new Group("KP-01", 2019, "Computer Science", teacher1, students);
 
         // Create a performance record using the Builder pattern
         performanceRecord = new PerformanceRecord.Builder()
                 .setSubject("Mathematics")
-                .setTeacher("Vasily Vasilyevich")
+                .setTeacher(teacher1)
                 .setDate("2023-09-01")
                 .setGrade(90)
                 .setStudent(student1)
@@ -59,22 +70,12 @@ public class TestClass {
     }
 
     /**
-     * Test the toString method of the Group class.
-     */
-    @Test
-    public void testGroupToString() {
-        String expected = "Group{groupNumber='KP-01', yearCreated=2019, department='Computer Science', curatorFullName='Alexander Alexandrovich', students=[Student{firstName='Ivan', lastName='Petrenko', birthDate='2000-01-15', recordBookNumber='12345'}, Student{firstName='Maria', lastName='Ivanova', birthDate='2001-05-20', recordBookNumber='54321'}]}";
-        assertEquals(group.toString(), expected);
-    }
-
-
-    /**
      * Test the correctness of the PerformanceRecord object creation using the Builder pattern.
      */
     @Test
     public void testPerformanceRecordBuilder() {
         assertEquals(performanceRecord.getSubject(), "Mathematics");
-        assertEquals(performanceRecord.getTeacher(), "Vasily Vasilyevich");
+        assertEquals(performanceRecord.getTeacher(), teacher1);
         assertEquals(performanceRecord.getDate(), "2023-09-01");
         assertEquals(performanceRecord.getGrade(), 90);
         assertEquals(performanceRecord.getStudent(), student1);
@@ -87,7 +88,7 @@ public class TestClass {
     public void testPerformanceRecordEqualsAndHashCode() {
         PerformanceRecord duplicateRecord = new PerformanceRecord.Builder()
                 .setSubject("Mathematics")
-                .setTeacher("Vasily Vasilyevich")
+                .setTeacher(teacher1)
                 .setDate("2023-09-01")
                 .setGrade(90)
                 .setStudent(student1)

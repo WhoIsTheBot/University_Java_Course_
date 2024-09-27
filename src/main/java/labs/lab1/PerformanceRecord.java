@@ -6,11 +6,11 @@ import java.util.Objects;
  * Клас представляє інформацію про успішність студента.
  */
 public class PerformanceRecord {
-    private final String subject;
-    private final String teacher;
-    private final String date;
-    private final int grade;
-    private final Student student;
+    private String subject;
+    private Teachers teacher;
+    private String date;
+    private int grade;
+    private Student student;
 
     private PerformanceRecord(Builder builder) {
         this.subject = builder.subject;
@@ -24,7 +24,7 @@ public class PerformanceRecord {
         return subject;
     }
 
-    public String getTeacher() {
+    public Teachers getTeacher() {
         return teacher;
     }
 
@@ -73,7 +73,7 @@ public class PerformanceRecord {
      */
     public static class Builder {
         private String subject;
-        private String teacher;
+        private Teachers teacher;
         private String date;
         private int grade;
         private Student student;
@@ -83,7 +83,7 @@ public class PerformanceRecord {
             return this;
         }
 
-        public Builder setTeacher(String teacher) {
+        public Builder setTeacher(Teachers teacher) {
             this.teacher = teacher;
             return this;
         }

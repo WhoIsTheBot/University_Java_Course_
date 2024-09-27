@@ -49,9 +49,14 @@ public class Student implements Comparable<Student> {
     public int hashCode() {
         return Objects.hash(recordBookNumber);
     }
-
     @Override
     public int compareTo(Student other) {
-        return this.lastName.compareTo(other.lastName);  // Сортування за прізвищем
+        int lastNameComparison = this.lastName.compareTo(other.lastName);
+        if (lastNameComparison != 0) {
+            return lastNameComparison; // Якщо прізвища різні, повертаємо їх порівняння
+        }
+        // Якщо прізвища однакові, порівнюємо за ім'ям
+        return this.firstName.compareTo(other.firstName);
     }
+
 }
