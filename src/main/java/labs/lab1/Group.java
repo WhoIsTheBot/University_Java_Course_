@@ -1,13 +1,12 @@
 package labs.lab1;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
 /**
  * Клас представляє інформацію про групу.
  */
-public class Group implements Comparator<Group> {
+public class Group {
     private String groupNumber;
     private int yearCreated;
     private String department;
@@ -45,9 +44,8 @@ public class Group implements Comparator<Group> {
     @Override
     public String toString() {
         return String.format("Group{groupNumber='%s', yearCreated=%d, department='%s', curatorFullName='%s', students=%s}",
-                groupNumber, yearCreated, department, curatorId, students);
+                groupNumber, yearCreated, department, curatorId.getFullName(), students);
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -62,14 +60,5 @@ public class Group implements Comparator<Group> {
     @Override
     public int hashCode() {
         return Objects.hash(groupNumber, yearCreated, department);
-    }
-
-    @Override
-    public int compare(Group g1, Group g2) {
-        int yearComparison = Integer.compare(g1.yearCreated, g2.yearCreated);
-        if (yearComparison != 0) {
-            return yearComparison;
-        }
-        return g1.groupNumber.compareTo(g2.groupNumber);
     }
 }

@@ -1,5 +1,7 @@
 package labs.lab1;
 
+import labs.lab1.builders.PerformanceRecordBuilder;
+
 import java.util.Objects;
 
 /**
@@ -12,7 +14,10 @@ public class PerformanceRecord {
     private int grade;
     private Student student;
 
-    private PerformanceRecord(Builder builder) {
+    /**
+    *Публічний конструктор для використання Builder
+     * */
+    public PerformanceRecord(PerformanceRecordBuilder builder) {
         this.subject = builder.subject;
         this.teacher = builder.teacher;
         this.date = builder.date;
@@ -44,7 +49,7 @@ public class PerformanceRecord {
     public String toString() {
         return "PerformanceRecord{" +
                 "subject='" + subject + '\'' +
-                ", teacher='" + teacher + '\'' +
+                ", teacher=" + teacher + // Виправлено на правильний тип
                 ", date='" + date + '\'' +
                 ", grade=" + grade +
                 ", student=" + student +
@@ -67,45 +72,4 @@ public class PerformanceRecord {
     public int hashCode() {
         return Objects.hash(subject, teacher, date, grade, student);
     }
-
-    /**
-     * Builder для створення екземплярів PerformanceRecord.
-     */
-    public static class Builder {
-        private String subject;
-        private Teachers teacher;
-        private String date;
-        private int grade;
-        private Student student;
-
-        public Builder setSubject(String subject) {
-            this.subject = subject;
-            return this;
-        }
-
-        public Builder setTeacher(Teachers teacher) {
-            this.teacher = teacher;
-            return this;
-        }
-
-        public Builder setDate(String date) {
-            this.date = date;
-            return this;
-        }
-
-        public Builder setGrade(int grade) {
-            this.grade = grade;
-            return this;
-        }
-
-        public Builder setStudent(Student student) {
-            this.student = student;
-            return this;
-        }
-
-        public PerformanceRecord build() {
-            return new PerformanceRecord(this);
-        }
-    }
 }
-

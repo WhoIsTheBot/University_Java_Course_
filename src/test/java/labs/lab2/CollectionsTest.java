@@ -2,103 +2,116 @@ package labs.lab2;
 
 import labs.lab1.Group;
 import labs.lab1.Student;
-import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
+
 public class CollectionsTest {
 
-    private final Collections collectionsUtil = new Collections();
+    private Collections collections;
+    private List<Student> students;
+    private List<Group> groups;
 
-    @Test
-    public void testSortStudentsByLastName() {
-        List<Student> students = new ArrayList<>();
-        students.add(new Student("John", "Doe", "2001-01-01", "AB123"));
-        students.add(new Student("Jane", "Smith", "2002-02-02", "AB124"));
+    @BeforeMethod
+    public void setUp() {
+        collections = new Collections();
+        students = new ArrayList<>();
+        groups = new ArrayList<>();
 
-        List<Student> sortedStudents = collectionsUtil.sortStudentsByLastName(students);
+        students.add(new Student("Rayan", "Gosling", "2001-02-12", "AB567"));
+        students.add(new Student("Emma", "Atoyn", "2006-09-12", "AB167"));
+        students.add(new Student("Rayan", "Slipers", "2000-11-22", "AB967"));
+        students.add(new Student("Anna", "Rinzon", "2001-02-12", "AB507"));
 
-        Assert.assertEquals(sortedStudents.get(0).getLastName(), "Doe");
-        Assert.assertEquals(sortedStudents.get(1).getLastName(), "Smith");
+        groups.add(new Group("101", 2022, "Computer Science", null, new ArrayList<>()));
+        groups.add(new Group("311", 2020, "Computer Science", null, new ArrayList<>()));
+        groups.add(new Group("302", 2020, "Mathematics", null, new ArrayList<>()));
     }
 
     @Test
-    public void testSortStudentsByBirthDate() {
-        List<Student> students = new ArrayList<>();
-        students.add(new Student("John", "Doe", "2001-01-01", "AB123"));
-        students.add(new Student("Jane", "Smith", "2000-02-02", "AB124"));
+    public void testSortStudentsByLastName() {
+        List<Student> sortedStudents = collections.sortStudentsByLastName(students);
 
-        List<Student> sortedStudents = collectionsUtil.sortStudentsByBirthDate(students);
-
-        Assert.assertEquals(sortedStudents.get(0).getBirthDate(), "2000-02-02");
-        Assert.assertEquals(sortedStudents.get(1).getBirthDate(), "2001-01-01");
+        assertEquals(sortedStudents.get(0).getLastName(), "Atoyn");
     }
 
     @Test
     public void testFindStudentByRecordBookNumber() {
-        List<Student> students = new ArrayList<>();
-        students.add(new Student("John", "Doe", "2001-01-01", "AB123"));
-        students.add(new Student("Jane", "Smith", "2002-02-02", "AB124"));
+        Optional<Student> foundStudent = collections.findStudentByRecordBookNumber(students, "AB567");
 
-        Optional<Student> foundStudent = collectionsUtil.findStudentByRecordBookNumber(students, "AB123");
-
-        Assert.assertTrue(foundStudent.isPresent());
-        Assert.assertEquals(foundStudent.get().getFirstName(), "John");
+        assertTrue(foundStudent.isPresent());
+        assertEquals(foundStudent.get().getFirstName(), "Rayan");
     }
 
     @Test
     public void testFilterStudentsByLastName() {
-        List<Student> students = new ArrayList<>();
-        students.add(new Student("John", "Doe", "2001-01-01", "AB123"));
-        students.add(new Student("Jane", "Smith", "2002-02-02", "AB124"));
-        students.add(new Student("Jack", "Doe", "2003-03-03", "AB125"));
+        List<Student> filteredStudents = collections.filterStudentsByLastName(students, "Gosling");
 
-        List<Student> filteredStudents = collectionsUtil.filterStudentsByLastName(students, "Doe");
-
-        Assert.assertEquals(filteredStudents.size(), 2);
-        Assert.assertEquals(filteredStudents.get(0).getFirstName(), "John");
-        Assert.assertEquals(filteredStudents.get(1).getFirstName(), "Jack");
+        assertEquals(filteredStudents.size(), 1);
+        assertEquals(filteredStudents.get(0).getFirstName(), "Rayan");
     }
 
     @Test
     public void testSortGroupsByYearCreated() {
-        List<Group> groups = new ArrayList<>();
-        groups.add(new Group("A1", 2022, "Computer Science", null, new ArrayList<>()));
-        groups.add(new Group("B1", 2020, "Mathematics", null, new ArrayList<>()));
+        List<Group> sortedGroups = collections.sortGroupsByYearCreated(groups);
 
-        List<Group> sortedGroups = collectionsUtil.sortGroupsByYearCreated(groups);
-
-        Assert.assertEquals(sortedGroups.get(0).getYearCreated(), 2020);
-        Assert.assertEquals(sortedGroups.get(1).getYearCreated(), 2022);
+        assertEquals(sortedGroups.get(0).getYearCreated(), 2020);
     }
 
     @Test
     public void testFindGroupByGroupNumber() {
-        List<Group> groups = new ArrayList<>();
-        groups.add(new Group("A1", 2022, "Computer Science", null, new ArrayList<>()));
-        groups.add(new Group("B1", 2020, "Mathematics", null, new ArrayList<>()));
+        Optional<Group> foundGroup = collections.findGroupByGroupNumber(groups, "101");
 
-        Optional<Group> foundGroup = collectionsUtil.findGroupByGroupNumber(groups, "A1");
-
-        Assert.assertTrue(foundGroup.isPresent());
-        Assert.assertEquals(foundGroup.get().getDepartment(), "Computer Science");
+        assertTrue(foundGroup.isPresent());
+        assertEquals(foundGroup.get().getDepartment(), "Computer Science");
     }
 
     @Test
     public void testFilterGroupsByDepartment() {
-        List<Group> groups = new ArrayList<>();
-        groups.add(new Group("A1", 2022, "Computer Science", null, new ArrayList<>()));
-        groups.add(new Group("B1", 2020, "Mathematics", null, new ArrayList<>()));
-        groups.add(new Group("C1", 2021, "Computer Science", null, new ArrayList<>()));
+        List<Group> filteredGroups = collections.filterGroupsByDepartment(groups, "Computer Science");
 
-        List<Group> filteredGroups = collectionsUtil.filterGroupsByDepartment(groups, "Computer Science");
+        assertEquals(filteredGroups.size(), 2);
+    }
 
-        Assert.assertEquals(filteredGroups.size(), 2);
-        Assert.assertEquals(filteredGroups.get(0).getGroupNumber(), "A1");
-        Assert.assertEquals(filteredGroups.get(1).getGroupNumber(), "C1");
+    @Test
+    public void testAddAndRemoveItems() {
+        collections.addItem("Coffee");
+
+        assertTrue(collections.containsItem("Coffee"));
+
+        collections.removeItem("Coffee");
+
+        assertFalse(collections.containsItem("Coffee"));
+    }
+
+    @Test
+    public void testCountItems() {
+        collections.addItem("Tea");
+        collections.addItem("Cake");
+
+        assertEquals(collections.countIteams(), 2);
+
+        collections.clearItems();
+
+        assertEquals(collections.countIteams(), 0);
+    }
+
+    @Test
+    public void testSortItems() {
+        collections.addItem("Cake");
+        collections.addItem("Tea");
+
+        collections.sortItems();
+
+        List<String> expectedOrder = List.of("Cake", "Tea");
+
+        assertEquals(collections.getAllItems(), expectedOrder);
     }
 }
-

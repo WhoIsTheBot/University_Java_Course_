@@ -44,7 +44,6 @@ public class Student implements Comparable<Student> {
         Student student = (Student) o;
         return Objects.equals(recordBookNumber, student.recordBookNumber);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(recordBookNumber);
@@ -52,10 +51,7 @@ public class Student implements Comparable<Student> {
     @Override
     public int compareTo(Student other) {
         int lastNameComparison = this.lastName.compareTo(other.lastName);
-        if (lastNameComparison != 0) {
-            return lastNameComparison; // Якщо прізвища різні, повертаємо їх порівняння
-        }
-        // Якщо прізвища однакові, порівнюємо за ім'ям
+        if (lastNameComparison != 0) { return lastNameComparison; }
         return this.firstName.compareTo(other.firstName);
     }
 
