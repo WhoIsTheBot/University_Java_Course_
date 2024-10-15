@@ -2,6 +2,10 @@ package labs.lab2;
 
 import labs.lab1.Group;
 import labs.lab1.Student;
+import labs.lab1.Teachers;
+import labs.lab4.builders.GroupBuilder;
+import labs.lab4.builders.StudentBuilder;
+import labs.lab4.builders.TeacherBuilder;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -20,26 +24,80 @@ public class CollectionsTest {
     private List<Group> groups;
 
     @BeforeMethod
+
     public void setUp() {
         collections = new Collections();
         students = new ArrayList<>();
         groups = new ArrayList<>();
 
-        students.add(new Student("Rayan", "Gosling", "2001-02-12", "AB567"));
-        students.add(new Student("Emma", "Atoyn", "2006-09-12", "AB167"));
-        students.add(new Student("Rayan", "Slipers", "2000-11-22", "AB967"));
-        students.add(new Student("Anna", "Rinzon", "2001-02-12", "AB507"));
+        Teachers teacher1 = new TeacherBuilder()
+                .setId("AB2341")
+                .setFullName("Nina Boyko")
+                .setBirthday("1985-06-15")
+                .setPosition("Mathematics Teacher")
+                .setPhoneNumber("380123456789")
+                .build();
 
-        groups.add(new Group("101", 2022, "Computer Science", null, new ArrayList<>()));
-        groups.add(new Group("311", 2020, "Computer Science", null, new ArrayList<>()));
-        groups.add(new Group("302", 2020, "Mathematics", null, new ArrayList<>()));
+        students.add(new StudentBuilder()
+                .setFirstName("Rayan")
+                .setLastName("Gosling")
+                .setBirthDate("2001-02-12")
+                .setRecordBookNumber("AB567")
+                .build());
+
+        students.add(new StudentBuilder()
+                .setFirstName("Emma")
+                .setLastName("Atoyn")
+                .setBirthDate("2006-09-12")
+                .setRecordBookNumber("AB167")
+                .build());
+
+        students.add(new StudentBuilder()
+                .setFirstName("Rayan")
+                .setLastName("Slipers")
+                .setBirthDate("2000-11-22")
+                .setRecordBookNumber("AB967")
+                .build());
+
+        students.add(new StudentBuilder()
+                .setFirstName("Anna")
+                .setLastName("Rinzon")
+                .setBirthDate("2001-02-12")
+                .setRecordBookNumber("AB507")
+                .build());
+
+        groups.add(new GroupBuilder()
+                .setGroupNumber("101")
+                .setYearCreated(2022)
+                .setDepartment("Computer Science")
+                .setCuratorId(teacher1)
+                .setStudents(students)
+                .build());
+
+        groups.add(new GroupBuilder()
+                .setGroupNumber("301")
+                .setYearCreated(2020)
+                .setDepartment("Computer Science")
+                .setCuratorId(teacher1)
+                .setStudents(students)
+                .build());
+
+        groups.add(new GroupBuilder()
+                .setGroupNumber("201")
+                .setYearCreated(2022)
+                .setDepartment("Computer Science")
+                .setCuratorId(teacher1)
+                .setStudents(students)
+                .build());
+
     }
+
 
     @Test
     public void testSortStudentsByLastName() {
         List<Student> sortedStudents = collections.sortStudentsByLastName(students);
 
-        assertEquals(sortedStudents.get(0).getLastName(), "Atoyn");
+        assertEquals(sortedStudents.getFirst().getLastName(), "Atoyn");
     }
 
     @Test
@@ -55,14 +113,14 @@ public class CollectionsTest {
         List<Student> filteredStudents = collections.filterStudentsByLastName(students, "Gosling");
 
         assertEquals(filteredStudents.size(), 1);
-        assertEquals(filteredStudents.get(0).getFirstName(), "Rayan");
+        assertEquals(filteredStudents.getFirst().getFirstName(), "Rayan");
     }
 
     @Test
     public void testSortGroupsByYearCreated() {
         List<Group> sortedGroups = collections.sortGroupsByYearCreated(groups);
 
-        assertEquals(sortedGroups.get(0).getYearCreated(), 2020);
+        assertEquals(sortedGroups.getFirst().getYearCreated(), 2020);
     }
 
     @Test
@@ -77,7 +135,7 @@ public class CollectionsTest {
     public void testFilterGroupsByDepartment() {
         List<Group> filteredGroups = collections.filterGroupsByDepartment(groups, "Computer Science");
 
-        assertEquals(filteredGroups.size(), 2);
+        assertEquals(filteredGroups.size(), 3);
     }
 
     @Test

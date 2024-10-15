@@ -1,6 +1,6 @@
 package labs.lab1;
 
-import labs.lab1.builders.PerformanceRecordBuilder;
+import labs.lab4.builders.PerformanceRecordBuilder;
 
 import java.util.Objects;
 

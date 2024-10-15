@@ -1,5 +1,7 @@
 package labs.lab1;
 
+import labs.lab4.builders.GroupBuilder;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -13,13 +15,17 @@ public class Group {
     private Teachers curatorId;
     private List<Student> students;
 
-    public Group(String groupNumber, int yearCreated, String department, Teachers curatorId, List<Student> students) {
-        this.groupNumber = groupNumber;
-        this.yearCreated = yearCreated;
-        this.department = department;
-        this.curatorId = curatorId;
-        this.students = students;
+    // Приватний конструктор, який приймає об'єкт GroupBuilder
+    // Приватний конструктор, який приймає об'єкт GroupBuilder
+    public Group(GroupBuilder builder) {
+        this.groupNumber = builder.groupNumber;
+        this.yearCreated = builder.yearCreated;
+        this.department = builder.department;
+        this.curatorId = builder.curatorId;
+        this.students = builder.students;
     }
+
+
 
     public String getGroupNumber() {
         return groupNumber;

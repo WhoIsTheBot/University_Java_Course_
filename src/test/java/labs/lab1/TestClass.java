@@ -1,7 +1,9 @@
 package labs.lab1;
 
-import labs.lab1.builders.PerformanceRecordBuilder;
-import labs.lab1.builders.TeacherBuilder;
+import labs.lab4.builders.GroupBuilder;
+import labs.lab4.builders.PerformanceRecordBuilder;
+import labs.lab4.builders.TeacherBuilder;
+import labs.lab4.builders.StudentBuilder;  // Import the StudentBuilder
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -26,10 +28,22 @@ public class TestClass {
      */
     @BeforeMethod
     public void setUp() {
-        // Create students
-        student1 = new Student("Ivan", "Petrenko", "2000-01-15", "12345");
-        student2 = new Student("Maria", "Ivanova", "2001-05-20", "54321");
+        // Create students using the StudentBuilder
+        student1 = new StudentBuilder()
+                .setFirstName("Ivan")
+                .setLastName("Petrenko")
+                .setBirthDate("2000-01-15")
+                .setRecordBookNumber("12345")
+                .build();
 
+        student2 = new StudentBuilder()
+                .setFirstName("Maria")
+                .setLastName("Ivanova")
+                .setBirthDate("2001-05-20")
+                .setRecordBookNumber("54321")
+                .build();
+
+        // Create a teacher using the TeacherBuilder
         teacher1 = new TeacherBuilder()
                 .setId("AB2341")
                 .setFullName("Nina Boyko")
@@ -38,9 +52,14 @@ public class TestClass {
                 .setPhoneNumber("380123456789")
                 .build();
 
-        // Create a group with two students
-        List<Student> students = Arrays.asList(student1, student2);
-        group = new Group("KP-01", 2019, "Computer Science", teacher1, students);
+
+        group = new GroupBuilder()
+                .setGroupNumber("G1")
+                .setYearCreated(2022)
+                .setDepartment("Computer Science")
+                .setCuratorId(teacher1)
+                .setStudents(List.of(student1, student2))
+                .build();
 
         // Create a performance record using the Builder pattern
         performanceRecord = new PerformanceRecordBuilder()
@@ -66,7 +85,13 @@ public class TestClass {
      */
     @Test
     public void testStudentEqualsAndHashCode() {
-        Student duplicateStudent = new Student("Ivan", "Petrenko", "2000-01-15", "12345");
+        Student duplicateStudent = new StudentBuilder()
+                .setFirstName("Ivan")
+                .setLastName("Petrenko")
+                .setBirthDate("2000-01-15")
+                .setRecordBookNumber("12345")
+                .build();
+
         assertEquals(student1, duplicateStudent);
         assertEquals(student1.hashCode(), duplicateStudent.hashCode());
     }
@@ -118,7 +143,13 @@ public class TestClass {
      */
     @Test
     public void testGroupEqualsAndHashCode() {
-        Group duplicateGroup = new Group("KP-01", 2019, "Computer Science", teacher1, Arrays.asList(student1, student2));
+        Group duplicateGroup = new GroupBuilder()
+                .setGroupNumber("G1")
+                .setYearCreated(2022)
+                .setDepartment("Computer Science")
+                .setCuratorId(teacher1)
+                .setStudents(List.of(student1, student2))
+                .build();
 
         assertEquals(group, duplicateGroup);
         assertEquals(group.hashCode(), duplicateGroup.hashCode());

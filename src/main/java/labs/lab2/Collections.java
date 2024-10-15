@@ -85,45 +85,4 @@ public class Collections {
                 .filter(group -> group.getDepartment().equals(department))
                 .collect(Collectors.toList());
     }
-
-    public static void main(String[] args) {
-        Collections collections = new Collections();
-        List<Student> students = new ArrayList<>();
-        List<Group> groups = new ArrayList<>();
-
-        students.add(new Student("Rayan", "Gosling", "2001-02-12","AB567" ));
-        students.add(new Student("Emma", "Atoyn", "2006-09-12","AB167" ));
-        students.add(new Student("Rayan", "Slipers", "2000-11-22","AB967" ));
-        students.add(new Student("Anna", "Rinzon", "2001-02-12","AB507" ));
-
-        groups.add(new Group("101", 2022,"Computer Science",null, new ArrayList<>()));
-        groups.add(new Group("311", 2020,"Computer Science",null, new ArrayList<>()));
-        groups.add(new Group("302", 2020,"Mathematics",null, new ArrayList<>()));
-
-        System.out.println(collections.sortStudentsByLastName(students));
-        System.out.println(collections.findGroupByGroupNumber(groups,"101"));
-
-        Collections service = new Collections();
-
-        service.addItem("Coffee");
-        service.addItem("Tea");
-        service.addItem("Cake");
-        service.addItem("Tost");
-        service.addItem("Late");
-
-        System.out.println(service.containsItem("Tost"));
-        System.out.println(service.containsItem("Bread"));
-
-        service.removeItem("Late");
-
-        System.out.println(service.containsItem("Late"));
-
-        System.out.println(service.getAllItems());
-        System.out.println(service.countIteams());
-
-        service.sortItems();
-        System.out.println(service.getAllItems());
-        service.clearItems();
-        System.out.println(service.getAllItems());
-    }
 }

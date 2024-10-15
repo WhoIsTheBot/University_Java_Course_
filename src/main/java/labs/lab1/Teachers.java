@@ -1,6 +1,6 @@
 package labs.lab1;
 
-import labs.lab1.builders.TeacherBuilder;
+import labs.lab4.builders.TeacherBuilder;
 
 import java.util.Objects;
 
