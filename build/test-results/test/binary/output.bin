@@ -1,0 +1,41 @@
+oSerialized JSON: {"firstName":"Ivan","lastName":"Boida","birthDate":"2000-01-01","recordBookNumber":"RB1234"}
+=Файл успішно створено: data/student.json
+�Serialized XML: <Student><firstName>Ivan</firstName><lastName>Boida</lastName><birthDate>2000-01-01</birthDate><recordBookNumber>RB1234</recordBookNumber></Student>
+<Файл успішно створено: data/student.xml
+Serialized YAML: ---
+firstName: "Ivan"
+lastName: "Boida"
+birthDate: "2000-01-01"
+recordBookNumber: "RB1234"
+
+=Файл успішно створено: data/student.yaml
+"/0.1 kg: 0.3
+"/0.2 kg: 0.6
+"/0.3 kg: 0.9
+"/0.4 kg: 1.2
+"/0.5 kg: 1.5
+"/0.6 kg: 1.8
+"/0.7 kg: 2.1
+"/0.8 kg: 2.4
+"/0.9 kg: 2.7
+"/1.0 kg: 3.0
+"00.1 kg: 0.7
+"00.2 kg: 1.4
+"00.3 kg: 2.1
+"00.4 kg: 2.8
+"00.5 kg: 3.5
+"00.6 kg: 4.2
+"00.7 kg: 4.9
+"00.8 kg: 5.6
+"00.9 kg: 6.3
+"01.0 kg: 7.0
+"10.1 kg: 0.3
+"10.2 kg: 0.6
+"10.3 kg: 0.9
+"10.4 kg: 1.2
+"10.5 kg: 1.5
+"10.6 kg: 1.8
+"10.7 kg: 2.1
+"10.8 kg: 2.4
+"10.9 kg: 2.7
+"11.0 kg: 3.0

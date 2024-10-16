@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="labs.lab3.SerializerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-10-16T13:29:21" hostname="DESKTOP-36BBRTO" time="0.512">
+  <properties/>
+  <testcase name="testSerializeDeserializeJson" classname="labs.lab3.SerializerTest" time="0.235"/>
+  <testcase name="testSerializeDeserializeXml" classname="labs.lab3.SerializerTest" time="0.14"/>
+  <testcase name="testSerializeDeserializeYaml" classname="labs.lab3.SerializerTest" time="0.129"/>
+  <system-out><![CDATA[Serialized JSON: {"firstName":"Ivan","lastName":"Boida","birthDate":"2000-01-01","recordBookNumber":"RB1234"}
+Файл успішно створено: data/student.json
+Serialized XML: <Student><firstName>Ivan</firstName><lastName>Boida</lastName><birthDate>2000-01-01</birthDate><recordBookNumber>RB1234</recordBookNumber></Student>
+Файл успішно створено: data/student.xml
+Serialized YAML: ---
+firstName: "Ivan"
+lastName: "Boida"
+birthDate: "2000-01-01"
+recordBookNumber: "RB1234"
+
+Файл успішно створено: data/student.yaml
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -15,10 +15,10 @@ public class PerformanceRecordBuilder {
     public int grade;
     public Student student;
 
-    private static final Pattern SUBJECT_PATTERN = Pattern.compile("^[A-Za-z\\s]+$"); // Літери і пробіли
+    private static final Pattern SUBJECT_PATTERN = Pattern.compile("^[A-Za-z\\s]+$");
     private static final int MIN_GRADE = 0;
     private static final int MAX_GRADE = 100;
-    private static final Pattern DATE_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$"); // YYYY-MM-DD
+    private static final Pattern DATE_PATTERN = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$");
 
     public PerformanceRecordBuilder setSubject(String subject) {
         this.subject = subject;

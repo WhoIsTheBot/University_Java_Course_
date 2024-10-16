@@ -10,13 +10,18 @@ repositories {
 }
 
 dependencies {
+    implementation 'ch.qos.logback:logback-classic:1.4.12'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
     testImplementation group: 'org.testng', name: 'testng', version: '7.7.0'
     implementation 'org.slf4j:slf4j-api:1.7.30'
-    implementation 'ch.qos.logback:logback-classic:1.4.12'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.15.0'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.0'  // YAML Jackson module
 }
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
 
 test {
     useTestNG()

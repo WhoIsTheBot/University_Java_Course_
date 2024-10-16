@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="labs.lab1.TestClass" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-10-16T13:29:21" hostname="DESKTOP-36BBRTO" time="0.658">
+  <properties/>
+  <testcase name="testGroupEqualsAndHashCode" classname="labs.lab1.TestClass" time="0.001"/>
+  <testcase name="testGroupToString" classname="labs.lab1.TestClass" time="0.002"/>
+  <testcase name="testPerformanceRecordBuilder" classname="labs.lab1.TestClass" time="0.001"/>
+  <testcase name="testPerformanceRecordEqualsAndHashCode" classname="labs.lab1.TestClass" time="0.002"/>
+  <testcase name="testStudentEqualsAndHashCode" classname="labs.lab1.TestClass" time="0.002"/>
+  <testcase name="testStudentToString" classname="labs.lab1.TestClass" time="0.001"/>
+  <testcase name="testTeachersEqualsAndHashCode" classname="labs.lab1.TestClass" time="0.001"/>
+  <testcase name="testTeachersToString" classname="labs.lab1.TestClass" time="0.011"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
