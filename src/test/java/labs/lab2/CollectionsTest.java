@@ -42,28 +42,28 @@ public class CollectionsTest {
                 .setFirstName("Rayan")
                 .setLastName("Gosling")
                 .setBirthDate("2001-02-12")
-                .setRecordBookNumber("AB567")
+                .setRecordBookNumber("RB1237")
                 .build());
 
         students.add(new StudentBuilder()
                 .setFirstName("Emma")
                 .setLastName("Atoyn")
                 .setBirthDate("2006-09-12")
-                .setRecordBookNumber("AB167")
+                .setRecordBookNumber("RB1236")
                 .build());
 
         students.add(new StudentBuilder()
                 .setFirstName("Rayan")
                 .setLastName("Slipers")
                 .setBirthDate("2000-11-22")
-                .setRecordBookNumber("AB967")
+                .setRecordBookNumber("RB1235")
                 .build());
 
         students.add(new StudentBuilder()
                 .setFirstName("Anna")
                 .setLastName("Rinzon")
                 .setBirthDate("2001-02-12")
-                .setRecordBookNumber("AB507")
+                .setRecordBookNumber("RB1234")
                 .build());
 
         groups.add(new GroupBuilder()
@@ -102,10 +102,10 @@ public class CollectionsTest {
 
     @Test
     public void testFindStudentByRecordBookNumber() {
-        Optional<Student> foundStudent = collections.findStudentByRecordBookNumber(students, "AB567");
+        Optional<Student> foundStudent = collections.findStudentByRecordBookNumber(students, "RB1234");
 
         assertTrue(foundStudent.isPresent());
-        assertEquals(foundStudent.get().getFirstName(), "Rayan");
+        assertEquals(foundStudent.get().getFirstName(), "Anna");
     }
 
     @Test

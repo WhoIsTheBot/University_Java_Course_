@@ -3,17 +3,17 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-<title>Test results - Class labs.lab4.builders.BuilderTest</title>
+<title>Test results - Class labs.lab5.DataBaseTest</title>
 <link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
 <link href="../css/style.css" rel="stylesheet" type="text/css"/>
 <script src="../js/report.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="content">
-<h1>Class labs.lab4.builders.BuilderTest</h1>
+<h1>Class labs.lab5.DataBaseTest</h1>
 <div class="breadcrumbs">
 <a href="../index.html">all</a> &gt; 
-<a href="../packages/labs.lab4.builders.html">labs.lab4.builders</a> &gt; BuilderTest</div>
+<a href="../packages/labs.lab5.html">labs.lab5</a> &gt; DataBaseTest</div>
 <div id="summary">
 <table>
 <tr>
@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">8</div>
+<div class="counter">6</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.020s</div>
+<div class="counter">1.949s</div>
 <p>duration</p>
 </div>
 </td>
@@ -63,6 +63,9 @@
 <li>
 <a href="#tab0">Tests</a>
 </li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Tests</h2>
@@ -75,46 +78,58 @@
 </tr>
 </thead>
 <tr>
-<td class="success">testGroupBuilder</td>
-<td class="success">0.001s</td>
+<td class="success">testAddAndGetStudent</td>
+<td class="success">0.384s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testInvalidGroupBuilder</td>
-<td class="success">0.004s</td>
+<td class="success">testAddAndGetTeacher</td>
+<td class="success">0.303s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testInvalidPerformanceRecordBuilder</td>
-<td class="success">0.003s</td>
+<td class="success">testDeleteStudent</td>
+<td class="success">0.346s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testInvalidStudentBuilder</td>
-<td class="success">0.003s</td>
+<td class="success">testDeleteTeacher</td>
+<td class="success">0.280s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testInvalidTeacherBuilder</td>
-<td class="success">0.004s</td>
+<td class="success">testUpdateStudentScholarship</td>
+<td class="success">0.322s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">testPerformanceRecordBuilder</td>
-<td class="success">0.002s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testStudentBuilder</td>
-<td class="success">0.001s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">testTeacherBuilder</td>
-<td class="success">0.002s</td>
+<td class="success">testUpdateTeacherSalary</td>
+<td class="success">0.314s</td>
 <td class="success">passed</td>
 </tr>
 </table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Table 'Student' is created!
+Table 'Teacher' is created!
+Student added successfully!
+Testing add and get for Student:
+ID: 1, Full Name: John Doe, Date Of Birth: 1998, Specialty: Computer Science, has a scholarship: true
+Teacher added successfully!
+Testing add and get for Teacher:
+ID: 1, Full Name: Emily Johnson, Age: 35, Position: Lecturer, Department ID: 2, Salary: 4000
+Student deleted!
+Testing delete for Student:
+Teacher deleted!
+Testing delete for Teacher:
+Student salary updated!
+Testing update for Student scholarship:
+Teacher salary updated!
+Testing update for Teacher salary:
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">

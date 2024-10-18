@@ -9,14 +9,13 @@ import java.util.List;
 import java.util.Objects;
 
 public class GroupBuilder {
-
-
     public String groupNumber;
     public int yearCreated;
     public String department;
     public Teachers curatorId;
     public List<Student> students;
 
+    // Методи для встановлення значень
     public GroupBuilder setGroupNumber(String groupNumber) {
         this.groupNumber = groupNumber;
         return this;
@@ -42,28 +41,23 @@ public class GroupBuilder {
         return this;
     }
 
-
     public Group build() {
         List<String> validationErrors = new ArrayList<>();
 
-        if (groupNumber == null || groupNumber.isEmpty()) {
-            validationErrors.add("Group number cannot be null or empty.");
+        if (groupNumber == null || groupNumber.isEmpty() || groupNumber.length() < 2 || groupNumber.length() > 10) {
+            validationErrors.add("Group number is invalid: '" + groupNumber + "'. Must be between 2 and 10 characters.");
         }
 
-        if (yearCreated < 1900 || yearCreated > 2100) {  // Задайте діапазон років
-            validationErrors.add("Year created must be between 1900 and 2100.");
+        if (yearCreated < 2018 || yearCreated > 2025) {
+            validationErrors.add("Year created is invalid: " + yearCreated + ". Must be between 1900 and 2100.");
         }
 
-        if (department == null || department.isEmpty()) {
-            validationErrors.add("Department cannot be null or empty.");
+        if (department == null || department.isEmpty() || department.length() < 3 || department.length() > 50) {
+            validationErrors.add("Department is invalid: '" + department + "'. Must be between 3 and 50 characters.");
         }
 
         if (curatorId == null) {
             validationErrors.add("Curator ID cannot be null.");
-        }
-
-        if (students == null) {
-            validationErrors.add("Students list cannot be null.");
         }
 
         if (students == null || students.isEmpty()) {
@@ -71,7 +65,7 @@ public class GroupBuilder {
         }
 
         if (!validationErrors.isEmpty()) {
-            throw new IllegalArgumentException("Invalid fields: " + String.join(", ", validationErrors));
+            throw new IllegalArgumentException("Invalid fields: \n" + String.join("\n", validationErrors));
         }
 
         return new Group(this);
