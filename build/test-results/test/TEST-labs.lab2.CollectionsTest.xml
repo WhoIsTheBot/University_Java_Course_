@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="labs.lab2.CollectionsTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-10-16T13:29:21" hostname="DESKTOP-36BBRTO" time="0.702">
+<testsuite name="labs.lab2.CollectionsTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-10-18T14:46:54" hostname="DESKTOP-36BBRTO" time="1.272">
   <properties/>
-  <testcase name="testAddAndRemoveItems" classname="labs.lab2.CollectionsTest" time="0.01"/>
-  <testcase name="testCountItems" classname="labs.lab2.CollectionsTest" time="0.001"/>
-  <testcase name="testFilterGroupsByDepartment" classname="labs.lab2.CollectionsTest" time="0.003"/>
-  <testcase name="testFilterStudentsByLastName" classname="labs.lab2.CollectionsTest" time="0.004"/>
+  <testcase name="testAddAndRemoveItems" classname="labs.lab2.CollectionsTest" time="0.001"/>
+  <testcase name="testCountItems" classname="labs.lab2.CollectionsTest" time="0.0"/>
+  <testcase name="testFilterGroupsByDepartment" classname="labs.lab2.CollectionsTest" time="0.002"/>
+  <testcase name="testFilterStudentsByLastName" classname="labs.lab2.CollectionsTest" time="0.002"/>
   <testcase name="testFindGroupByGroupNumber" classname="labs.lab2.CollectionsTest" time="0.002"/>
-  <testcase name="testFindStudentByRecordBookNumber" classname="labs.lab2.CollectionsTest" time="0.003"/>
-  <testcase name="testSortGroupsByYearCreated" classname="labs.lab2.CollectionsTest" time="0.005"/>
-  <testcase name="testSortItems" classname="labs.lab2.CollectionsTest" time="0.015"/>
-  <testcase name="testSortStudentsByLastName" classname="labs.lab2.CollectionsTest" time="0.001"/>
+  <testcase name="testFindStudentByRecordBookNumber" classname="labs.lab2.CollectionsTest" time="0.002"/>
+  <testcase name="testSortGroupsByYearCreated" classname="labs.lab2.CollectionsTest" time="0.003"/>
+  <testcase name="testSortItems" classname="labs.lab2.CollectionsTest" time="0.01"/>
+  <testcase name="testSortStudentsByLastName" classname="labs.lab2.CollectionsTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

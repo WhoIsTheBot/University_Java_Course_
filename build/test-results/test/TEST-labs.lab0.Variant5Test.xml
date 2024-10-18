@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="labs.lab0.Variant5Test" tests="23" skipped="0" failures="0" errors="0" timestamp="2024-10-16T13:29:22" hostname="DESKTOP-36BBRTO" time="0.141">
+<testsuite name="labs.lab0.Variant5Test" tests="23" skipped="0" failures="0" errors="0" timestamp="2024-10-18T14:46:56" hostname="DESKTOP-36BBRTO" time="0.13">
   <properties/>
-  <testcase name="inputTest[0](3, 27)" classname="labs.lab0.Variant5Test" time="0.007"/>
+  <testcase name="inputTest[0](3, 27)" classname="labs.lab0.Variant5Test" time="0.009"/>
   <testcase name="inputTest[1](2, 8)" classname="labs.lab0.Variant5Test" time="0.0"/>
-  <testcase name="inputTest[0](100, 10, 0)" classname="labs.lab0.Variant5Test" time="0.005"/>
-  <testcase name="inputTest[1](12, 8, 4)" classname="labs.lab0.Variant5Test" time="0.0"/>
+  <testcase name="inputTest[0](100, 10, 0)" classname="labs.lab0.Variant5Test" time="0.004"/>
+  <testcase name="inputTest[1](12, 8, 4)" classname="labs.lab0.Variant5Test" time="0.001"/>
   <testcase name="inputTest[2](139, 20, 19)" classname="labs.lab0.Variant5Test" time="0.001"/>
-  <testcase name="ifTest[0](2, 3, -1, [I@641856)" classname="labs.lab0.Variant5Test" time="0.008"/>
-  <testcase name="ifTest[1](0, 0, 0, [I@4c4d362a)" classname="labs.lab0.Variant5Test" time="0.001"/>
-  <testcase name="ifTest[2](-3, -3, -3, [I@76b74e9c)" classname="labs.lab0.Variant5Test" time="0.0"/>
+  <testcase name="ifTest[0](2, 3, -1, [I@df1cff6)" classname="labs.lab0.Variant5Test" time="0.011"/>
+  <testcase name="ifTest[1](0, 0, 0, [I@511816c0)" classname="labs.lab0.Variant5Test" time="0.001"/>
+  <testcase name="ifTest[2](-3, -3, -3, [I@5339bbad)" classname="labs.lab0.Variant5Test" time="0.001"/>
   <testcase name="booleanTest[0](5, 6, true)" classname="labs.lab0.Variant5Test" time="0.004"/>
-  <testcase name="booleanTest[1](0, -5, true)" classname="labs.lab0.Variant5Test" time="0.001"/>
-  <testcase name="booleanTest[2](0, -2, false)" classname="labs.lab0.Variant5Test" time="0.001"/>
-  <testcase name="switchTest[0](3, 1, 2, 2)" classname="labs.lab0.Variant5Test" time="0.012"/>
-  <testcase name="switchTest[1](1, 2, 2, 4)" classname="labs.lab0.Variant5Test" time="0.0"/>
-  <testcase name="forTest[0](3, 0.3)" classname="labs.lab0.Variant5Test" time="0.014"/>
+  <testcase name="booleanTest[1](0, -5, true)" classname="labs.lab0.Variant5Test" time="0.0"/>
+  <testcase name="booleanTest[2](0, -2, false)" classname="labs.lab0.Variant5Test" time="0.0"/>
+  <testcase name="switchTest[0](3, 1, 2, 2)" classname="labs.lab0.Variant5Test" time="0.01"/>
+  <testcase name="switchTest[1](1, 2, 2, 4)" classname="labs.lab0.Variant5Test" time="0.001"/>
+  <testcase name="forTest[0](3, 0.3)" classname="labs.lab0.Variant5Test" time="0.016"/>
   <testcase name="forTest[1](7, 0.7)" classname="labs.lab0.Variant5Test" time="0.004"/>
-  <testcase name="forTest[2](3, 0.3)" classname="labs.lab0.Variant5Test" time="0.005"/>
+  <testcase name="forTest[2](3, 0.3)" classname="labs.lab0.Variant5Test" time="0.003"/>
   <testcase name="whileTest[0](32, 5)" classname="labs.lab0.Variant5Test" time="0.001"/>
-  <testcase name="whileTest[1](16, 4)" classname="labs.lab0.Variant5Test" time="0.001"/>
-  <testcase name="whileTest[2](1, 0)" classname="labs.lab0.Variant5Test" time="0.001"/>
+  <testcase name="whileTest[1](16, 4)" classname="labs.lab0.Variant5Test" time="0.0"/>
+  <testcase name="whileTest[2](1, 0)" classname="labs.lab0.Variant5Test" time="0.0"/>
   <testcase name="whileTest[3](2, 1)" classname="labs.lab0.Variant5Test" time="0.001"/>
-  <testcase name="arrayTest[0]([I@2f3c6ac4, 5)" classname="labs.lab0.Variant5Test" time="0.007"/>
-  <testcase name="twoDimensionArrayTest[0]([[I@26b894bd, 3, 3, [[I@287f94b1)" classname="labs.lab0.Variant5Test" time="0.007"/>
-  <testcase name="twoDimensionArrayTest[1]([[I@26b894bd, 4, 4, [[I@50305a)" classname="labs.lab0.Variant5Test" time="0.001"/>
+  <testcase name="arrayTest[0]([I@111610e6, 5)" classname="labs.lab0.Variant5Test" time="0.006"/>
+  <testcase name="twoDimensionArrayTest[0]([[I@7882c44a, 3, 3, [[I@32639b12)" classname="labs.lab0.Variant5Test" time="0.011"/>
+  <testcase name="twoDimensionArrayTest[1]([[I@7882c44a, 4, 4, [[I@3cc20577)" classname="labs.lab0.Variant5Test" time="0.001"/>
   <system-out><![CDATA[0.1 kg: 0.3
 0.2 kg: 0.6
 0.3 kg: 0.9

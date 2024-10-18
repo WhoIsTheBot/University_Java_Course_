@@ -15,7 +15,9 @@ dependencies {
     testImplementation group: 'org.testng', name: 'testng', version: '7.7.0'
     implementation 'org.slf4j:slf4j-api:1.7.30'
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.15.0'
-    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.0'  // YAML Jackson module
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.0'
+    implementation 'org.postgresql:postgresql:42.6.0'
+
 }
 
 tasks.withType(JavaCompile).configureEach {

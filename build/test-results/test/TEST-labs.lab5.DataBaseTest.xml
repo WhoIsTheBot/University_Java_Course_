@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="labs.lab5.DataBaseTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2024-10-18T14:46:53" hostname="DESKTOP-36BBRTO" time="2.695">
+  <properties/>
+  <testcase name="testAddAndGetStudent" classname="labs.lab5.DataBaseTest" time="0.384"/>
+  <testcase name="testAddAndGetTeacher" classname="labs.lab5.DataBaseTest" time="0.303"/>
+  <testcase name="testDeleteStudent" classname="labs.lab5.DataBaseTest" time="0.346"/>
+  <testcase name="testDeleteTeacher" classname="labs.lab5.DataBaseTest" time="0.28"/>
+  <testcase name="testUpdateStudentScholarship" classname="labs.lab5.DataBaseTest" time="0.322"/>
+  <testcase name="testUpdateTeacherSalary" classname="labs.lab5.DataBaseTest" time="0.314"/>
+  <system-out><![CDATA[Table 'Student' is created!
+Table 'Teacher' is created!
+Student added successfully!
+Testing add and get for Student:
+ID: 1, Full Name: John Doe, Date Of Birth: 1998, Specialty: Computer Science, has a scholarship: true
+Teacher added successfully!
+Testing add and get for Teacher:
+ID: 1, Full Name: Emily Johnson, Age: 35, Position: Lecturer, Department ID: 2, Salary: 4000
+Student deleted!
+Testing delete for Student:
+Teacher deleted!
+Testing delete for Teacher:
+Student salary updated!
+Testing update for Student scholarship:
+Teacher salary updated!
+Testing update for Teacher salary:
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

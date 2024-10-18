@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="labs.lab4.builders.BuilderTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-10-16T13:29:21" hostname="DESKTOP-36BBRTO" time="0.65">
+<testsuite name="labs.lab4.builders.BuilderTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2024-10-18T14:46:54" hostname="DESKTOP-36BBRTO" time="0.621">
   <properties/>
-  <testcase name="testGroupBuilder" classname="labs.lab4.builders.BuilderTest" time="0.002"/>
+  <testcase name="testGroupBuilder" classname="labs.lab4.builders.BuilderTest" time="0.001"/>
   <testcase name="testInvalidGroupBuilder" classname="labs.lab4.builders.BuilderTest" time="0.004"/>
   <testcase name="testInvalidPerformanceRecordBuilder" classname="labs.lab4.builders.BuilderTest" time="0.003"/>
-  <testcase name="testInvalidStudentBuilder" classname="labs.lab4.builders.BuilderTest" time="0.004"/>
+  <testcase name="testInvalidStudentBuilder" classname="labs.lab4.builders.BuilderTest" time="0.003"/>
   <testcase name="testInvalidTeacherBuilder" classname="labs.lab4.builders.BuilderTest" time="0.004"/>
-  <testcase name="testPerformanceRecordBuilder" classname="labs.lab4.builders.BuilderTest" time="0.001"/>
+  <testcase name="testPerformanceRecordBuilder" classname="labs.lab4.builders.BuilderTest" time="0.002"/>
   <testcase name="testStudentBuilder" classname="labs.lab4.builders.BuilderTest" time="0.001"/>
-  <testcase name="testTeacherBuilder" classname="labs.lab4.builders.BuilderTest" time="0.001"/>
+  <testcase name="testTeacherBuilder" classname="labs.lab4.builders.BuilderTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
