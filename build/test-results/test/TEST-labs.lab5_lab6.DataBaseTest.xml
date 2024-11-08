@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="labs.lab5_lab6.DataBaseTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-10-25T16:23:32" hostname="DESKTOP-36BBRTO" time="0.325">
+  <properties/>
+  <testcase name="testDeleteStudent" classname="labs.lab5_lab6.DataBaseTest" time="0.325"/>
+  <system-out><![CDATA[[]
+]]></system-out>
+  <system-err><![CDATA[жовт. 25, 2024 7:23:32 ПП labs.lab5_lab6.TeacherDataBase deleteTeacherTable
+INFO: Table 'Teacher' has been deleted!
+жовт. 25, 2024 7:23:32 ПП labs.lab5_lab6.TeacherDataBase createTeacherTable
+INFO: Table 'Teacher' is created!
+жовт. 25, 2024 7:23:32 ПП labs.lab5_lab6.StudentDataBase deleteStudentTable
+INFO: Table 'Student' has been deleted!
+жовт. 25, 2024 7:23:32 ПП labs.lab5_lab6.StudentDataBase createStudentTable
+INFO: Table 'Student' is created!
+жовт. 25, 2024 7:23:33 ПП labs.lab5_lab6.StudentDataBase addStudent
+INFO: Student added successfully: Charlie Brown
+жовт. 25, 2024 7:23:33 ПП labs.lab5_lab6.StudentDataBase fetchStudents
+INFO: Fetching student list from database...
+жовт. 25, 2024 7:23:33 ПП labs.lab5_lab6.StudentDataBase deleteStudent
+INFO: Student deleted with ID: 1
+жовт. 25, 2024 7:23:33 ПП labs.lab5_lab6.StudentDataBase fetchStudents
+INFO: Fetching student list from database...
+]]></system-err>
+</testsuite>

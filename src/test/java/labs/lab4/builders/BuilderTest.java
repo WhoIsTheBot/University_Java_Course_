@@ -17,14 +17,14 @@ public class BuilderTest {
                 .setFirstName("John")
                 .setLastName("Doe")
                 .setBirthDate("2000-01-01")
-                .setRecordBookNumber("RB12345");
+                .setRecordBookNumber("RB1234");
 
         Student student = studentBuilder.build();
 
         Assert.assertEquals(student.getFirstName(), "John");
         Assert.assertEquals(student.getLastName(), "Doe");
         Assert.assertEquals(student.getBirthDate(), "2000-01-01");
-        Assert.assertEquals(student.getRecordBookNumber(), "RB12345");
+        Assert.assertEquals(student.getRecordBookNumber(), "RB1234");
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class)
@@ -61,7 +61,7 @@ public class BuilderTest {
                 .setFirstName("Alice")
                 .setLastName("Johnson")
                 .setBirthDate("1999-03-12")
-                .setRecordBookNumber("RB54321")
+                .setRecordBookNumber("RB5432")
                 .build();
 
         Teachers teacher = new TeacherBuilder()
@@ -107,14 +107,14 @@ public class BuilderTest {
                 .setFirstName("Tom")
                 .setLastName("Hanks")
                 .setBirthDate("1998-08-20")
-                .setRecordBookNumber("RB10001")
+                .setRecordBookNumber("RB1001")
                 .build();
 
         Student student2 = new StudentBuilder()
                 .setFirstName("Emma")
                 .setLastName("Stone")
                 .setBirthDate("1997-04-10")
-                .setRecordBookNumber("RB10002")
+                .setRecordBookNumber("RB1002")
                 .build();
 
         GroupBuilder groupBuilder = new GroupBuilder()
@@ -135,6 +135,6 @@ public class BuilderTest {
 
     @Test(expectedExceptions = IllegalArgumentException.class)
     public void testInvalidGroupBuilder() {
-        new GroupBuilder().build(); // Should throw an exception due to missing required fields
+        new GroupBuilder().build();
     }
 }

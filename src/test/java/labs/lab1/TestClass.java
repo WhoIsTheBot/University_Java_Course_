@@ -28,22 +28,21 @@ public class TestClass {
      */
     @BeforeMethod
     public void setUp() {
-        // Create students using the StudentBuilder
+
         student1 = new StudentBuilder()
                 .setFirstName("Ivan")
                 .setLastName("Petrenko")
                 .setBirthDate("2000-01-15")
-                .setRecordBookNumber("12345")
+                .setRecordBookNumber("RB1234")
                 .build();
 
         student2 = new StudentBuilder()
                 .setFirstName("Maria")
                 .setLastName("Ivanova")
                 .setBirthDate("2001-05-20")
-                .setRecordBookNumber("54321")
+                .setRecordBookNumber("RB5678")
                 .build();
 
-        // Create a teacher using the TeacherBuilder
         teacher1 = new TeacherBuilder()
                 .setId("AB2341")
                 .setFullName("Nina Boyko")
@@ -76,7 +75,7 @@ public class TestClass {
      */
     @Test
     public void testStudentToString() {
-        String expected = "Student{firstName='Ivan', lastName='Petrenko', birthDate='2000-01-15', recordBookNumber='12345'}";
+        String expected = "Student{firstName='Ivan', lastName='Petrenko', birthDate='2000-01-15', recordBookNumber='RB1234'}";
         assertEquals(student1.toString(), expected);
     }
 
@@ -89,7 +88,7 @@ public class TestClass {
                 .setFirstName("Ivan")
                 .setLastName("Petrenko")
                 .setBirthDate("2000-01-15")
-                .setRecordBookNumber("12345")
+                .setRecordBookNumber("RB1234")
                 .build();
 
         assertEquals(student1, duplicateStudent);
